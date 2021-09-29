@@ -18,6 +18,19 @@ themesDir = "../../"
     name = "About"
     url = "/about/"
     weight = 10
+  
+  [[menu.main]]
+    identifier = "post"
+    name = "Posts"
+    url = "#"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "archive"
+    name = "Post Archive"
+    url = "#"
+    parent = "post"
+
 
 [taxonomies]
 category = "categories"
