@@ -1,0 +1,16 @@
+<header class="z-10 text-gray-800 bg-gray-200 lg:h-13 grid-in-header">
+   <div class="h-full">
+    <div class="flex justify-between lg:h-full">
+            <nav class="items-center hidden h-full space-x-3 lg:flex">
+                {{ $currentPage := .}}
+                {{ range .Site.Menus.main }}
+                {{ $active := or (eq $currentPage.Title .Name) (or ($currentPage.HasMenuCurrent "main" .)
+                ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.RelPermalink .URL)) }}
+               
+                <a href="{{.URL}}" class="block h-full p-3 transition duration-100 hover:bg-gray-400 dark:hover:bg-navy-600 {{if $active}}border-b-2 border-blue-600{{end}}">{{.Name}}</a>
+                {{ end }}
+            </nav>
+
+    </div> 
+   </div>
+</header>

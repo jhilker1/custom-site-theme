@@ -3,7 +3,13 @@
     {{- partial "head.html" . -}}
     <body>
         <div class="grid h-screen grid-areas-mobile grid-rows-layout lg:grid-areas-desktop grid-cols-layout overscroll-contain">
-
+            {{ partial "header.html" . }}
+            {{ partial "sidebar/fixed.html" . }}
+            <main class="px-3 pt-3 grid-in-main markdown max-w-none xl:markdown-lg">
+                {{ block "main" . }}
+                {{ end }}
+            </main>   
+            {{ partial "footer.html" .}} 
         </div>
     </body>
 </html>

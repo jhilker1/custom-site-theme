@@ -4,7 +4,8 @@ const plugin = require('tailwindcss/plugin');
 
 
 module.exports = {
-  purge: [],
+  mode: 'jit',
+  purge: ['layouts/**/*.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     gridTemplateAreas: {
@@ -18,14 +19,10 @@ module.exports = {
       gridTemplateRows: {
         layout: '0.2fr 2.6fr 0.2fr',
       },
-       height: {
+      height: {
         '13': '52px',
         '18': '66px'
-      },
-      outline: {
-        royal: ['2px solid #2e8bc0', '0px'],
-        red: ['2px solid red', '0px']
-      },
+      }
     },
   },
   variants: {

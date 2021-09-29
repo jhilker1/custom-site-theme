@@ -9,25 +9,7 @@
 
     li {
         @apply ml-5;
-    }
+    } 
 
-    code,pre {
-        @apply !text-[12px];
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-        @apply font-serif;
-    }
-
-     li[role="doc-endnote"] > p {
-        @apply !text-[12px];
-    }
-    
-    li[role="doc-endnote"]::before {
-        @apply !text-[12px];
-    }
-
-    #resume > .article > h2 {
-        @apply !text-2xl;
-    }   
+  
 }
