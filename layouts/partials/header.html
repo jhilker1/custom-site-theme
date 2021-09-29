@@ -1,4 +1,4 @@
-<header class="z-10 text-gray-800 bg-gray-200 lg:h-13 grid-in-header">
+<header class="z-10 text-gray-800 bg-gray-200 dark:text-gray-200 dark:bg-gray-800 lg:h-13 grid-in-header">
     <div class="flex justify-between h-full">
         <!-- Mobile Sidebar Toggle -->
         <button class="p-4 hover:bg-gray-400 lg:hidden">
@@ -15,7 +15,7 @@
             {{ $active := or (eq $currentPage.Title .Name) (or ($currentPage.HasMenuCurrent "main" .)
             ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.RelPermalink .URL)) }}
             {{ if .HasChildren}}
-            <div class="relative inline-block h-full p-3 hover:bg-gray-400 dark:hover:bg-navy-600 {{if $active}}border-b-2 border-royal-600 dark:border-royal-400{{end}}"
+            <div class="relative inline-block h-full p-3 hover:bg-gray-400 {{if $active}}border-b-2 border-royal-600 dark:border-royal-400{{end}}"
                 x-data="{ open: false }">
                 <a @click="open = !open" class="flex items-center">
                     <span>
@@ -36,13 +36,13 @@
                     x-transition:leave-end="opacity-0 transform -translate-y-3">
                     {{ range .Children }}
                     <a href="{{.URL}}"
-                        class="block px-3 py-1 hover:text-royal-600 dark:hover:text-royal-400">{{.Name}}</a>
+                        class="block px-3 py-1 hover:text-royal-600 ">{{.Name}}</a>
                     {{ end }}
                 </div>
             </div>
             {{ else }}
             <a href="{{.URL}}"
-                class="block h-full p-3 transition duration-100 hover:bg-gray-400 dark:hover:bg-navy-600 {{if $active}}border-b-2 border-royal-600 dark:border-royal-400{{end}}">{{.Name}}</a>
+                class="block h-full p-3 transition duration-100 hover:bg-gray-400 {{if $active}}border-b-2 border-royal-600{{end}}">{{.Name}}</a>
             {{ end }}
             {{ end }}
         </nav>
